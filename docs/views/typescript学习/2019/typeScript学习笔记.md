@@ -134,3 +134,35 @@ function search(...species:string[]):string{
 var result:string = search('22','肤白','貌美','大长腿')
 console.log(result)
 ```
+## 数组
+
+1.数组的声明方式
+```
+let arr1:number[]//声明一个数值类型的数组
+let arr2:Array<string>//声明一个字符串类型的数组
+
+```
+2.对数组进行赋值  
+```
+let arr1:number[] = []
+let arr2:number[] = [1,2,3,4]
+let arr3:Array<string> = ['你好','数组']
+let arr4:Array<boolean> = [true,false,true]
+```
+注：定义一种类型的数组，数组内只能存储一种类型元素  
+
+3.构造函数赋值
+```
+let arr1:number[]= new Array()
+let arr2:number[]= new Array(1,2,3,4)
+let arr3:Array<string> = new Array('你好'，'数组')
+```
+4.元祖
+```
+let arr1:[string,number,boolean]
+//正确的初始化
+arr1 = ['你好',1,true]
+//错误的初始化
+arr1 = [1,true,"你好"]
+```
+注：元祖类型表示一个已知数量和类型的数组，各元素的类型可以不相同，
