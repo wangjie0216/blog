@@ -134,7 +134,7 @@ function search(...species:string[]):string{
 var result:string = search('22','肤白','貌美','大长腿')
 console.log(result)
 ```
-## 数组
+## 6.数组
 
 1.数组的声明方式
 ```
@@ -166,3 +166,54 @@ arr1 = ['你好',1,true]
 arr1 = [1,true,"你好"]
 ```
 注：元祖类型表示一个已知数量和类型的数组，各元素的类型可以不相同，
+
+## 7.引用字符串
+1.基本类型字符串：用单引号或者双引号括起来得一串字符串  
+2.引用类型字符串：用new实例化字符串类型   
+```
+let str:string = "1231"
+let str:String = new String('123123')
+```
+3.字符串长度得获取
+```
+let str:string = '123123'
+console.log(str.length)//直接加length
+```
+4.查找字符串
+```
+let str:string = '12313你好21231'
+let str1:string = '你好'
+console.log(str.indexOf(str1))  // str.indexOf(str1)基本语法，从前向后找，如果没有找到返回 -1,返回值是字符串得下标
+console.log(str.lastIndexOf(str1))//从后向前找
+```
+5.替换字符串
+```
+str.replace(subStr,newStr) //subStr表示被替换得字符串，newStr表示要替换得字符串
+```
+6.字符串的截取
+```
+str.substring(startIndex,[endIndex])
+//startIndex表示开始的下标，endIndex表示结束的下标，可选可不选，
+```
+## 8.引用日期对象
+1.创建日期时，需要声明Date()类型
+```
+let time:Date = new Date()
+console.log(time) // 打印出当前日期
+```
+2.传递一个整数
+```
+let time:Date = new Date(1000) 
+console.log(time) //打印出1970-01-01T00:00:01.000Z  
+//这个整数代表距离1970-01-01 00:00:00的时间
+```
+3.传递字符串
+```
+let time:Date = new Date('2019-08-01 17:18:00')
+console.log(time)//打印出输入的时间，还有2019/08/01和2018-08-01T02:30:00两种格式。
+```
+4.传递年月日时分秒的变量
+```
+let time:Date = new Date(year,month,day,hours,minutes,seconds,ms)
+```
+# 9.引用正则
