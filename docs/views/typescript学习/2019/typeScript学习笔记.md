@@ -216,4 +216,32 @@ console.log(time)//打印出输入的时间，还有2019/08/01和2018-08-01T02:3
 ```
 let time:Date = new Date(year,month,day,hours,minutes,seconds,ms)
 ```
-# 9.引用正则
+## 9.引用正则
+1.字面量法  
+```
+let reg:RegExp = /123/
+let res:RegExp = /123/gi   //g全局的意思  i忽略大小写
+```
+2.构造函数法  
+```
+let reg:RegExp = new RegExp('123')
+let reg:RegExp = new RegExp('123','gi')
+```
+
+## 10.类的声明和使用
+和es6的类的使用基本相同，只是每个属性要加上类型  
+```
+class Hello{
+  name:string;
+  age:string;
+  constructor(name:string,age:number){
+    this.name = name
+    this.age = age
+  }
+  say(){
+    console.log('你好')
+  }
+}
+let wj:Hello = new Hello('小红',18)
+wj.say()
+```
