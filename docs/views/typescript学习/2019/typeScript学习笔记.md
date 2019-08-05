@@ -245,3 +245,91 @@ class Hello{
 let wj:Hello = new Hello('小红',18)
 wj.say()
 ```
+## 11.修饰符
+1.public:公有修饰符，可以在类内或者类外使用public  
+2.protected:受保护的修饰符，可以在本类或者子类中使用  
+3.private:私有修饰符，只可以在类内使用private  
+```
+class  Helloworld{
+  public name:string
+  protected weight:string
+  private age:number
+  public constructor(weight:string,name:string,age:number){
+    this.name = name
+    this.weight = weight
+    this.age = age
+  }
+  public sayHello(){
+    console.log('你好')
+  }
+  protected sayName(){
+    console.log('林缘')
+  }
+
+}
+var wj:Helloworld = new Helloworld('林缘','80kg',25)
+console.log(wj.name)
+console.log(wj.weight)//报错
+console.log(wj.age)//报错
+
+wj.sayHello()
+wj.sayName()//报错
+```
+## 12.类的继承
+创建类的时候继承一个已存在的类，这个已经存在的类成为父类，
+继承的称为子类，类的继承使用关键字`extends`,子类除了不能继承父类的私有成员方法和属性，其他的都可以继承。
+```
+class Shap{
+  Area:number
+  constructor(a:number){
+    this.Area = a
+  }
+}
+
+class Circle extends Shape{
+  disp():void{
+    console.log("圆的面积："+this.Area)
+  }
+}
+var obj = new Circle(223)
+obj.disp()
+```
+1.子类只能继承一个父类，不能继承多个类，但是可以多重继承  
+```
+calss Root{
+  str:string
+}
+class Child extends Root{}
+class Leaf extends Child{}//多重继承，继承了Child 和Root的类
+var obj = new Leaf();
+obj.str = "你好"
+console.log(obj.str)
+```
+2.类继承后，子类可以对父类的方法重新定义，这个过程叫重写，  
+其中`super`关键字是对父类的直接引用，该关键字可以引用父类的属性和方法
+```
+calss PrinterClass{
+  doPrint():void{
+    console.log('父类的doPrint方法')
+  }
+}
+class StringPrinter extends PrinterClass{
+  doPrint():void{
+    super.doPrint()//调用父类方法
+    console.log("子类的doPrint方法")
+  }
+}
+```
+3.static关键字用于定义类的数据属性和方法为静态的，，静态成员可以直接通过类名调用
+```
+class StaticMem {  
+   static num:number; 
+   
+   static disp():void { 
+      console.log("num 值为 "+ StaticMem.num) 
+   } 
+} 
+ 
+StaticMem.num = 12     // 初始化静态变量
+StaticMem.disp()       // 调用静态方法
+```
