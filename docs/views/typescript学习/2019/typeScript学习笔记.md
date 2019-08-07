@@ -333,3 +333,4 @@ class StaticMem {
 StaticMem.num = 12     // 初始化静态变量
 StaticMem.disp()       // 调用静态方法
 ```
+注：文章内容参考菜鸟教程和技术胖
