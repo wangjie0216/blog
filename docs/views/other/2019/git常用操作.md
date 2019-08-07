@@ -33,7 +33,7 @@ categories:
 
    git push origin master //提交内容到仓库，master是主分支名，如何提交到不同的分支修改master分支名即可，常用命令
 
-   git status //查看状态，可以看出那些文件被修改
+   git status //查看状态，可以看出那些文件被修改，红色说明文件在本地工作区，绿色说明文件在暂缓区
 
 ## 版本回退
 
@@ -48,6 +48,7 @@ categories:
    git checkout --file // file是文件名，必须加上--否则变成了切换分支，撤销该分支的修改
 
 ## 和远程库建立关系
+   git remote -v //查看本地仓库和哪个仓库有关联
 
    git remote add origin https://github.com/0216/blog.git 
    //和远程库建立联系,origin是远程分支的名称
@@ -75,4 +76,20 @@ categories:
 
    git merge dev //合并dev分支的代码到本分支
 
+## 常用Liunx命令
 
+   mkdir //创建文件价
+
+   touch 文件名.扩展名 //创建文件
+
+   cat 文件名 //查看文件内容
+
+   cd 文件夹 //进入文件夹
+
+   cd ../ //进入上一级文件夹
+
+   pwd //查看当前文件所在路径
+
+   rm -rf 文件夹或者文件名 //强制删除文件
+
+   rm -rf * //删除全部
