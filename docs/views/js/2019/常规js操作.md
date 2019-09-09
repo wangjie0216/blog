@@ -52,3 +52,37 @@ var str = '20190731'
 console.log(inserStr(inserStr(str,4,"."),7,"."))
 //打印出2019.07.31
 ```
+## 函数防抖
+
+ 应用场景：防止多次提交，只执行最后一次的提交
+
+ 简化版代码
+ ```
+ const debounce = (fn,delay) =>{
+   let timer = null;
+   return (...args) =>{
+     clearTimeout(timer);
+     timer = setTimeout(()=>{
+       fn.apply(this,args)
+     },delay)
+   }
+ }
+ ```
+## 函数节流
+
+应用场景：在一个时间段内，只触发一次函数
+
+简化版代码：
+```
+const throttle = (fn,delay=500) =>{
+  let flag = true;
+  return (...args) => {
+    if(!flag) return;
+    flag = false;
+    setTimeout(()=>{
+      fn.apply(this,args);
+      flag = true;
+    },delay)
+  }
+}
+```
